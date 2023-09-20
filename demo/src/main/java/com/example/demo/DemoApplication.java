@@ -25,9 +25,8 @@ public class DemoApplication {
 	}
 
 	@PostMapping("/post")
-	public ResponseEntity<Model> post(@RequestBody Model model)
+	public ResponseEntity<String> post(@RequestBody Model model)
 	{
-		model.Content = model.Content.concat(" Response");
-		return ResponseEntity.ok(model);
+		return ResponseEntity.ok(model.Content + " created on " + model.DateTime);
 	}
 }
